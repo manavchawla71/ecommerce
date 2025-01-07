@@ -31,7 +31,16 @@ function App() {
           path="/main"
           element={<MainPage addToCart={addToCart} addedItems={addedItems} />}
         />
-        <Route path="/cart" element={<CartPage cart={cart} />} />
+        <Route
+          path="/cart"
+          element={
+            <CartPage
+              cart={cart}
+              addToCart={addToCart}
+              addedItems={addedItems}
+            />
+          }
+        />
         <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>

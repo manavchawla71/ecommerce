@@ -1,26 +1,15 @@
 import { FaCartShopping } from "react-icons/fa6";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css"; // Import a separate CSS file for cleaner styling
 
 const Navbar = ({ cartCount }) => {
-  const [items, setitems] = useState([]);
   return (
-    <div
-      style={{
-        backgroundColor: "black",
-        color: "white",
-        margin: 0,
-        padding: 0,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-around",
-      }}
-    >
-      <h1>Shoezer</h1>
-      <Link to="/cart">
-        <div style={{ display: "flex", alignItems: "center", color: "white" }}>
+    <div className="navbar">
+      <h1 className="navbar-logo">Shoezer</h1>
+      <Link to="/cart" className="cart-link">
+        <div className="cart-container">
           <FaCartShopping />
-          <span style={{ marginLeft: "8px" }}>{cartCount}</span>
+          <span className="cart-count">{cartCount}</span>
         </div>
       </Link>
     </div>
