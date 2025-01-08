@@ -1,14 +1,16 @@
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import "./Navbar.css"; // Import a separate CSS file for cleaner styling
+import "./Navbar.css"; // Separate CSS file for Navbar
 
 const Navbar = ({ cartCount }) => {
   return (
     <div className="navbar">
-      <h1 className="navbar-logo">Shoezer</h1>
-      <Link to="/cart" className="cart-link">
-        <div className="cart-container">
-          <FaCartShopping />
+      <Link to="/">
+        <h1 className="navbar-title">Shoezer</h1>
+      </Link>
+      <Link to="/cart" className="navbar-cart-link">
+        <div className="navbar-cart">
+          <FaCartShopping className="cart-icon" />
           <span className="cart-count">{cartCount}</span>
         </div>
       </Link>

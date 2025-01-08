@@ -31,6 +31,7 @@ function App() {
           path="/main"
           element={<MainPage addToCart={addToCart} addedItems={addedItems} />}
         />
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/cart"
           element={

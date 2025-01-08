@@ -1,13 +1,20 @@
 import { shoes } from "./../shoes";
+import Filters from "./../components/Filters";
 import { useState } from "react";
 import "./MainPage.css"; // Import a CSS file for styling
 
+// eslint-disable-next-line react/prop-types
 const MainPage = ({ addToCart, addedItems }) => {
+  const [filteredshoes, setfilteredshoes] = useState(shoes);
   return (
     <div className="main-page">
-      <h1 className="page-title">Shoe Collection</h1>
+      <h1 className="page-title">Filters</h1>
+      <Filters
+        filteredshoes={filteredshoes}
+        setfilteredshoes={setfilteredshoes}
+      />
       <div className="shoe-grid">
-        {shoes.map((shoe) => (
+        {filteredshoes.map((shoe) => (
           <div key={shoe.id} className="shoe-card">
             <img src={shoe.image} alt={shoe.name} className="shoe-image" />
             <h4 className="shoe-brand">{shoe.brand}</h4>
